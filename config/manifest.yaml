@@ -3,6 +3,7 @@ kind: Service
 metadata:
   name: dev
   labels:
+    app.kubernetes.io/part-of: hello-world
     carto.run/workload-name: dev
     app.kubernetes.io/component: run
 spec:
