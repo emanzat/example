@@ -3,7 +3,6 @@ kind: Service
 metadata:
   name: dev
   labels:
-    app.kubernetes.io/part-of: hello-world
     carto.run/workload-name: dev
     app.kubernetes.io/component: run
 spec:
@@ -14,7 +13,7 @@ spec:
     spec:
       containers:
       - name: workload
-        image: harbor.nordnet.fr/nordnet/cartodev@sha256:54d705ffefbe602d77d035c8900de840b770a278ff6cb09ef8aec51de979ebbb
+        image: harbor.nordnet.fr/nordnet/cartodev@sha256:830f0dd76ce66721b0fec89f5890677f914dca579fca82ff6373aa5adce390ba
         securityContext:
           runAsUser: 1000
       imagePullSecrets:
