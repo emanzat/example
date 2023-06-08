@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: workload
-        image: harbor.nordnet.fr/nordnet/cartodev@sha256:830f0dd76ce66721b0fec89f5890677f914dca579fca82ff6373aa5adce390ba
+        image: harbor.nordnet.fr/nordnet/cartodev@sha256:f6277063f4a405d14b1ad0b3df563ffd5a1c3bce3d3dfe58129844d3b0423364
         securityContext:
           runAsUser: 1000
       imagePullSecrets:
