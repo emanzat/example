@@ -1,5 +1,5 @@
-apiVersion: serving.knative.dev/v1
-kind: Service
+apiVersion: apps/v1
+kind: Deployment
 metadata:
   name: dev
   labels:
@@ -7,14 +7,27 @@ metadata:
     carto.run/workload-name: dev
     app.kubernetes.io/component: run
 spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      carto.run/workload-name: dev
   template:
     metadata:
-      annotations:
-        autoscaling.knative.dev/minScale: "1"
+      labels:
+        carto.run/workload-name: dev
     spec:
       containers:
       - name: workload
-        image: harbor.nordnet.fr/nordnet/cartodev@sha256:4496d2d74a505d205230ef8013a3a47cf2422934f1af025f828bad7ac1cfd75f
+        image: harbor.nordnet.fr/nordnet/cartodev@sha256:d45eab118ed732e07fe7be8ef8cbae70345191c1a3615966597a736607fc1768
+        ports:
+        - containerPort: 8080
+        resources:
+          limits:
+            cpu: 100m
+            memory: 1Gi
+          requests:
+            cpu: 1Gi
+            memory: 1Gi
         securityContext:
           runAsUser: 1000
       imagePullSecrets:
