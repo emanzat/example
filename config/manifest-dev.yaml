@@ -28,6 +28,17 @@ spec:
           requests:
             cpu: 1Gi
             memory: 1Gi
+        livenessProbe:
+          httpGet:
+            port: 8080
+            path: /
+          initialDelaySeconds: 60
+          periodSeconds: 2
+        readinessProbe:
+          httpGet:
+            port: 8080
+            path: /
+          initialDelaySeconds: 10
         securityContext:
           runAsUser: 1000
       imagePullSecrets:
