@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
       - name: workload
-        image: harbor.nordnet.fr/nordnet/cartodev@sha256:053812ae39080989eb9c9d6cdb107f2e60dcba7803336f3cda9b8733da823c9c
+        image: harbor.nordnet.fr/nordnet/cartodev@sha256:95d1e15d386ea1b3210d2b4c810d5385aa7ed6020589ef74e2ce44be2c517643
         ports:
         - containerPort: 8080
         resources:
