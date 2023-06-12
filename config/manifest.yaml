@@ -1,24 +1,24 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: dev
+  name: deva
   labels:
-    app.kubernetes.io/part-of: hello-world
-    carto.run/workload-name: dev
+    app.kubernetes.io/part-of: hello-worlda
+    carto.run/workload-name: deva
     app.kubernetes.io/component: run
 spec:
   replicas: 1
   selector:
     matchLabels:
-      carto.run/workload-name: dev
+      carto.run/workload-name: deva
   template:
     metadata:
       labels:
-        carto.run/workload-name: dev
+        carto.run/workload-name: deva
     spec:
       containers:
       - name: workload
-        image: harbor.nordnet.fr/nordnet/cartodev@sha256:95d1e15d386ea1b3210d2b4c810d5385aa7ed6020589ef74e2ce44be2c517643
+        image: harbor.nordnet.fr/nordnet/cartodeva@sha256:95d1e15d386ea1b3210d2b4c810d5385aa7ed6020589ef74e2ce44be2c517643
         ports:
         - containerPort: 8080
         resources:
